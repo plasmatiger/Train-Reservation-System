@@ -1,0 +1,24 @@
+{% extends 'base_visitor.html' %}
+
+{% block body %}
+<div class="container-fluid">
+        {% if booked_ticket_list %}
+            {% for ticket in booked_ticket_list %}
+                <div class="col-sm-4">
+                    <div class="thumbnail">
+                        <div class="caption" style="display: block; text-align: center;">
+                            <h5>{{ ticket.PNR }}</h5>
+                            <!-- <h4>{{ note.Note }}</h4> -->
+                        </div>
+                    </div>
+                </div>
+                
+                {% cycle '' '' '' '' '' '<div class="clearfix visible-lg"></div>' %}
+            {% endfor %}
+        {% else %}  
+            <h2>No Trains betwwen these stations!!!</h2>
+        {% endif %}
+   
+</div>
+{% endblock %}
+
